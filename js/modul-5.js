@@ -262,20 +262,273 @@
 
 //================================================================
 
-//================================================================
+// const dirtyMultiply = (array, value) => {
+//   for (let i = 0; i < array.length; i += 1) {
+//     array[i] = array[i] * value;
+//   }
+// };
+
+// const numbers = [1, 2, 3, 4, 5];
+// dirtyMultiply(numbers, 2);
+// Відбулася мутація вихідних даних - масиву numbers
+// console.log(numbers); // [2, 4, 6, 8, 10]
 
 //================================================================
 
-//================================================================
+// const pureMultiply = (array, value) => {
+//   const newArray = [];
+
+//   array.forEach((element) => {
+//     newArray.push(element * value);
+//   });
+
+//   return newArray;
+// };
+
+// const numbers = [1, 2, 3, 4, 5];
+// const doubledNumbers = pureMultiply(numbers, 2);
+
+// Мутація вихідних даних не відбулася
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// Функція повернула новий масив зі зміненими даними
+// console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 
 //================================================================
 
+//* Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент,
+//* значення якого - це парне число, додаючи до нього значення параметра value, який точно є числом.
+//* Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers,
+//* а створювала, наповнювала і повертала новий масив з оновленими значеннями.
+
+// *************
+// function changeEven(numbers, value) {
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+// }
+// *************
+
+// function changeEven(numbers, value) {
+// Створення нового масиву з оновленими значеннями
+//   const updatedNumbers = numbers.map((number) => {
+// Перевірка, чи число парне
+//     if (number % 2 === 0) {
+// Додавання до парного числа значення параметра value
+//       return number + value;
+//     }
+// Залишити непарне число без змін
+//     return number;
+//   });
+
+// Повернення нового масиву
+//   return updatedNumbers;
+// }
+
+// *************
+
+// function changeEven(numbers, value) {
+// Створення нового масиву без зміни оригінального
+//   const updatedNumbers = [];
+
+//   numbers.forEach((number) => {
+// Перевірка, чи число парне
+//     if (number % 2 === 0) {
+// Додавання до парного числа значення параметра value
+//       updatedNumbers.push(number + value);
+//     } else {
+// Залишити непарне число без змін
+//       updatedNumbers.push(number);
+//     }
+//   });
+
+// Повернення нового масиву
+//   return updatedNumbers;
+// }
+
+// *************
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); // повертає новий масив [1, 12, 3, 14, 5]
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // повертає новий масив [12, 18, 3, 7, 14, 16]
+// console.log(changeEven([17, 24, 68, 31, 42], 100)); // повертає новий масив [17, 124, 168, 31, 142]
 //================================================================
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+// const planetsInUpperCase = planets.map((planet) => planet.toUpperCase());
+// console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+// const planetsInLowerCase = planets.map((planet) => planet.toLowerCase());
+// console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// Оригінальний масив не змінився
+// console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
 
 //================================================================
 
+// *В масиві planets зберігаються назви планет.
+// *Доповни код таким чином, щоб у змінній planetsLengths вийшов масив,
+// *що буде складатися з довжин назв кожної планети з масиву planets.Обов'язково використовуй метод map().
+
+// *************
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+// const planetsLengths = planets;
+// *************
+
+// *Оголошена змінна planets
+// *Значення змінної planets - це масив ["Earth", "Mars", "Venus", "Jupiter"]
+// *Оголошена змінна planetsLengths
+// *Значення змінної planetsLengths - це масив [5, 4, 5, 7]
+// *Для перебирання масиву планет використаний метод map()
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// const planetsLengths = planets.map((planet) => planet.length);
+
+// console.log(planets);
+// console.log(planetsLengths);
+//================================================================
+// const students = [
+//   { name: "Mango", courses: ["mathematics", "physics"] },
+//   { name: "Poly", courses: ["science", "mathematics"] },
+//   { name: "Kiwi", courses: ["physics", "biology"] },
+// ];
+
+// const mappedCourses = students.map((student) => student.courses);
+// console.log(mappedCourses); // [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
+
+// const flattenedCourses = students.flatMap((student) => student.courses);
+// console.log(flattenedCourses); // ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
 //================================================================
 
+// *Масив books містить колекцію об'єктів книг, кожен з яких містить властивість genres,
+// *значенням якої є масив жанрів.Використовуючи метод flatMap(),
+// *зроби так, щоб у змінній genres вийшов масив жанрів усіх книг(властивість genres) з масиву books.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+
+// const genres = books.flatMap((book) => book.genres);
+
+// console.log(genres);
+
+//================================================================
+//* Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
+// *Доповни стрілочну функцію getUserEmails(users) таким чином,
+// *щоб вона повертала масив поштових адрес користувачів(властивість email) з масиву об'єктів в параметрі users.
+
+// const getUserEmails = (users) => { };
+
+// const getUserEmails = (users) => users.map((user) => user.email);
+
+// Приклад використання функції
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+    // інші властивості
+//   },
+  // інші користувачі
+// ];
+
+// const userEmails = getUserEmails(users);
 //================================================================
 
 //================================================================
