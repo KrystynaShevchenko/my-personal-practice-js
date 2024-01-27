@@ -523,34 +523,206 @@
 //     name: "Moore Hensley",
 //     email: "moorehensley@indexia.com",
 //     eyeColor: "blue",
-    // інші властивості
+// інші властивості
 //   },
-  // інші користувачі
+// інші користувачі
 // ];
 
 // const userEmails = getUserEmails(users);
 //================================================================
+// const values = [51, -3, 27, 21, -68, 42, -37];
+
+// const positiveValues = values.filter((value) => value >= 0);
+// console.log(positiveValues); // [51, 27, 21, 42]
+// до positiveValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були >= 0
+
+// const negativeValues = values.filter((value) => value < 0);
+// console.log(negativeValues); // [-3, -68, -37]
+// до negativeValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були < 0
+
+// const bigValues = values.filter((value) => value > 1000);
+// console.log(bigValues); // []
+// до negatibigValues eValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були > 1000
+
+// console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+// Оригінальний масив values не змінився
+
+//================================================================
+//*Доповни код так, щоб у змінній evenNumbers був масив парних чисел із масиву numbers,
+//*а у змінній oddNumbers — масив непарних.Обов'язково використовуй метод filter().
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter((number) => number % 2 === 0);
+// const oddNumbers = numbers.filter((number) => number % 2 !== 0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+//================================================================
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// const best = students.filter((student) => student.score >= HIGH_SCORE);
+// console.log(best); // Масив об'єктів з іменами Mango і Kiwi
+
+// const worst = students.filter((student) => student.score < LOW_SCORE);
+// console.log(worst); // Масив з одним об'єктом Ajax
+
+// У колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Масив об'єктів з іменами Poly і Houston
+//================================================================
+
+//**Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating.
+//*Використовуючи метод filter(), доповни код таким чином, щоб:
+//*У змінній topRatedBooks утворився масив книг,
+//*рейтинг яких(властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+//*У змінній booksByAuthor утворився масив книг,
+//*написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR. */
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+
+// const topRatedBooks = books.filter((book) => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter((book) => book.author === AUTHOR);
+//================================================================
+
+//*Доповни функцію getUsersWithEyeColor(users, color) таким чином,
+//*щоб вона повертала масив користувачів, у яких колір очей(властивість eyeColor) збігається зі значенням другого параметра color.
+
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter((user) => user.eyeColor === color);
+// };
+//================================================================
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+// colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+// colorPickerOptions.find((option) => option.label === "white"); // undefined
 
 //================================================================
 
+//*Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating.
+//*Використовуючи метод find(), доповни код таким чином, щоб:
+//*У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+//*У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+// ];
+// const BOOK_TITLE = "The Dream of a Ridiculous Man";
+// const AUTHOR = "Robert Sheckley";
+
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find((book) => book.author === AUTHOR);
 //================================================================
+
+//*Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача,
+//*пошта якого(властивість email) збігається зі значенням другого параметра email.const
+
+// const getUserWithEmail = (users, email) => {
+//   return users.find((user) => user.email === email);
+// };
+
 //================================================================
+// Усі елементи більші або дорівнюють нулю? - так
+// [1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Усі елементи більші або дорівнюють нулю? - ні
+// [1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+//================================================================
+// const products = [
+// 	{ name: "apple", quantity: 2 },
+// 	{ name: "orange", quantity: 5 },
+// 	{ name: "plum", quantity: 0 },
+// ];
+
+// const hasEveryProduct = products.every(product => product.quantity > 0);
+// console.log(hasEveryProduct); // false
+//================================================================
+
+//*Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла,
+//*чи всі користувачі зараз активні(властивість isActive) і повертала true або false.
+
+// const isEveryUserActive = (users) => {
+//   return users.every((user) => user.isActive);
+// };
 
 //================================================================
 
-//================================================================
+//*Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх, одним гравцем.
+//*У змінній players зберігається об'єкт, де ключ це ім'я гравця, а значення - його ігровий час.
+//*У змінній playtimes зберігається масив значень об'єкта players, тобто масив ігрового часу усіх гравців.
+//*Значенням змінної averagePlayTime буде середній час, проведений одним гравцем в іграх.
+//*Доповни код таким чином, щоб у змінній totalPlayTime вийшов загальний ігровий час з масиву playtimes.
+//*Використовуй метод reduce().
 
-//================================================================
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
 
-//================================================================
+// const totalPlayTime = playtimes.reduce(
+//   (total, playtime) => total + playtime,
+//   0
+// );
 
-//================================================================
-
-//================================================================
-
-//================================================================
-
-//================================================================
+// const averagePlayTime = totalPlayTime / playtimes.length;
 
 //================================================================
 
