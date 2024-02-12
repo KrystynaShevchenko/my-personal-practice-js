@@ -1,3 +1,4 @@
+"use strict";
 // console.log(Boolean(true)); // true
 // console.log(Boolean(false)); // false
 
