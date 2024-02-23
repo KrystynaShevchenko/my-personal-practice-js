@@ -78,16 +78,79 @@
 
 // foo();
 // ==============================================
+// const message = "JavaScript is awesome!";
+// alert(message);
 // ==============================================
+
+// Просимо клієнта підтвердити бронювання готелю
+// і зберігаємо результат роботи confirm у змінну
+// const isComing = confirm("Please confirm hotel reservation");
+// console.log(isComing);
+
 // ==============================================
+
+// Запитуємо назву готеля, в якому хотів би зупинитися клієнт
+// і зберігаємо результат виклику prompt у змінну.
+// const hotelName = prompt("Please enter desired hotel name");
+// console.log(hotelName);
+
 // ==============================================
+
+// const value = prompt("Please enter a number!");
+// console.log(typeof value); // "string"
+// console.log(value); // "5"
+
 // ==============================================
+
+// const x = 5;
+// const y = 10;
+// const z = 5;
+
+// console.log("x > y:", x > y); // false
+// console.log("x < y:", x < y); // true
+// console.log("x < z:", x < z); // false
+// console.log("x <= z:", x <= z); // true
+// console.log("x === y:", x === y); // false
+// console.log("x === z:", x === z); // true
+// console.log("x !== y:", x !== y); // true
+// console.log("x !== z:", x !== z); // false
+
 // ==============================================
+
+// const num1 = "Hi 24";
+// console.log(Number(num1)); //NaN
 // ==============================================
+
+// console.log(Number.parseInt("5px")); // 5
+// console.log(Number.parseInt("12qwe74")); // 12
+// console.log(Number.parseInt("12.46qwe79")); // 12
+// console.log(Number.parseInt("qweqwe")); // NaN
+
 // ==============================================
+
+// console.log(Number.parseFloat("5px")); // 5
+// console.log(Number.parseFloat("12qwe74")); // 12
+// console.log(Number.parseFloat("12.46qwe79")); // 12.46
+// console.log(Number.parseFloat("qweqwe")); // NaN
+
 // ==============================================
+
+// const validNumber = Number("51"); // 51
+// console.log(Number.isNaN(validNumber)); // false
+
+// const invalidNumber = Number("qweqwe"); // NaN
+// console.log(Number.isNaN(invalidNumber)); // true
+
 // ==============================================
+
+// const validNumber = Number("51"); // 51
+
+// console.log(typeof validNumber); //number
+
 // ==============================================
+
+// console.log(Math.random()); // випадкове число між 0 і 1
+// console.log(Math.random() * (10 - 1) + 1); // псевдовипадкове число від 1 до 10
 // ==============================================
 // ==============================================
 // ==============================================

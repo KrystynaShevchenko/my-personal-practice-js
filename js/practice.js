@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 // console.log(25);
 // console.log("HELLO");
