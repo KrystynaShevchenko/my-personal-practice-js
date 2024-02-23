@@ -152,12 +152,68 @@
 // console.log(Math.random()); // випадкове число між 0 і 1
 // console.log(Math.random() * (10 - 1) + 1); // псевдовипадкове число від 1 до 10
 // ==============================================
+
+// const pricePerDroid = 800;
+// const orderedQuantity = 6;
+// const deliveryFee = 50;
+// const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+// const message = `You ordered droids worth ${totalPrice} credits`;
+
+// console.log(totalPrice);
+// console.log(message);
 // ==============================================
+
+// const courseTopic = "JavaScript essentials";
+
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
+
+// console.log(courseTopicLength);
+// console.log(firstElement);
+// console.log(lastElement);
 // ==============================================
+// console.log(typeof 5);
+// console.log(typeof "5");
 // ==============================================
+
+// function toDoHomework() {
+//   console.log("I'm doing homework right now.");
+// }
+
+/* toDoHomework(); */
 // ==============================================
+
+// function multiply(x, y, z) {
+//   console.log("The code before return is executed as usual");
+
+//   return x * y * z;
+
+//   console.log("This code is never executed because it is after return");
+// }
+
+// console.log(multiply(2, 3, 5)); // 30
+
 // ==============================================
+
+// function multiply(x, y, z) {
+//   console.log(`Result: ${x * y * z}`);
+// }
+
+// console.log("Log before multiply execution");
+// multiply(2, 3, 5); // "Result: 30"
+// console.log("Log after multiply execution");
+
 // ==============================================
+
+// function makeMessage(username) {
+//   console.log(`Hello ${username}`);
+// }
+
+// makeMessage("Jacob");
+
+// ==============================================
+
 // ==============================================
 // ==============================================
 // ==============================================
